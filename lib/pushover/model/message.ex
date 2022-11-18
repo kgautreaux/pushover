@@ -5,6 +5,7 @@ defmodule Pushover.Model.Message do
   ## Attributes
 
   *   `data` (*type:* `String.t`, *default:* `nil`) - Your message.
+  *   `user` (*type:* `String.t`, *default:* `nil`) - User key to send to (if absent defaults to configured user/group.
   *   `device` (*type:* `String.t`, *default:* `nil`) - Your user's device name(s) to send the message directly (multiple devices may be separated by a comma).
   *   `title` (*type:* `String.t`, *default:* `nil`) - Your message's title, otherwise your app name is used.
   *   `url` (*type:* `String.t`, *default:* `nil`) - A supplementary URL to show with your message.
@@ -20,6 +21,7 @@ defmodule Pushover.Model.Message do
 
   @type t :: %__MODULE__{
     :data => String.t(),
+    :user => String.t(),
     :device => String.t(),
     :title => String.t(),
     :url => String.t(),
@@ -32,6 +34,7 @@ defmodule Pushover.Model.Message do
   }
 
   field(:data)
+  field(:user)
   field(:device)
   field(:title)
   field(:url)

@@ -13,16 +13,12 @@ defmodule Pushover do
 
   """
 
-  def get_user do
-    System.get_env("PUSHOVER_USER") ||
-      Application.get_env(:pushover, :user) ||
-      raise AuthenticationError, message: @missing_config_error_message
-  end
-
-  def get_group do
+  def get_group_or_user do
     System.get_env("PUSHOVER_GROUP") ||
       Application.get_env(:pushover, :group) ||
-        raise AuthenticationError, message: @missing_config_error_message
+      System.get_env("PUSHOVER_USER") ||
+      Application.get_env(:pushover, :user) ||
+      raise AuthenticationError, message: @missing_config_error_message
   end
 
   def get_token do
