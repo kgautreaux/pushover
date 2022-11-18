@@ -1,7 +1,7 @@
 defmodule Pushover.MixProject do
   use Mix.Project
 
-  @version "0.3.3"
+  @version "0.4.0"
 
   def project do
     [
@@ -22,9 +22,9 @@ defmodule Pushover.MixProject do
   def package do
     [
       name: "pushover",
-      maintainers: ["Vlad Jebelev"],
+      maintainers: ["Keith Gautreaux"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/vjebelev/pushover"}
+      links: %{"GitHub" => "https://github.com/kgautreaux/pushover"}
     ]
   end
 
@@ -42,7 +42,7 @@ defmodule Pushover.MixProject do
       {:google_gax, "~> 0.3.1"},
 
       # Docs
-      {:ex_doc, "~> 0.21.3", only: :dev, runtime: false}
+      {:ex_doc, "~> 0.29.0", only: :dev, runtime: false}
     ]
   end
 end
