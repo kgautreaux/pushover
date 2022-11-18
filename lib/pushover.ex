@@ -7,22 +7,22 @@ defmodule Pushover do
   like so:
 
     config :pushover,
-      user: "YOUR_USER"
-      token: "YOUR_TOKEN",
+      user: "YOUR_USER",
+      group: "YOUR_GROUP",
+      token: "YOUR_TOKEN"
 
   """
 
   def get_user do
     System.get_env("PUSHOVER_USER") ||
       Application.get_env(:pushover, :user) ||
-      Application.get_env(:pushover, :group) ||
       raise AuthenticationError, message: @missing_config_error_message
   end
 
-  def get_team do
-    System.get_env("PUSHOVER_TEAM") ||
-      Application.get_env(:pushover, :team) ||
-      raise AuthenticationError, message: @missing_config_error_message
+  def get_group do
+    System.get_env("PUSHOVER_GROUP") ||
+      Application.get_env(:pushover, :group) ||
+        raise AuthenticationError, message: @missing_config_error_message
   end
 
   def get_token do

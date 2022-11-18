@@ -27,10 +27,11 @@ use Mix.Config
 
 config :pushover,
   user: "YOUR_PUSHOVER_USER",
+  group: "YOUR_PUSHOVER_GROUP",
   token: "YOUR_PUSHOVER_TOKEN"
 ```
 
-Alternatively, use environment variables PUSHOVER_USER and PUSHOVER_TOKEN.
+Alternatively, use environment variables PUSHOVER_USER, PUSHOVER_GROUP, and PUSHOVER_TOKEN.
 
 To send a message via Pushover Message API:
 
