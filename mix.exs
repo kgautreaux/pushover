@@ -1,13 +1,13 @@
 defmodule Pushover.MixProject do
   use Mix.Project
 
-  @version "0.4.1"
+  @version "0.4.8"
 
   def project do
     [
       app: :pushover,
       version: @version,
-      elixir: "~> 1.4",
+      elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       package: package(),
@@ -38,7 +38,7 @@ defmodule Pushover.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:tesla, "~> 1.4.1"},
+      {:tesla, "~> 1.7"},
       {:google_gax, "~> 0.4.1"},
 
       # Docs
